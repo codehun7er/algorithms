@@ -6,11 +6,7 @@ struct DSU {
   vector<size_t> parent;
   vector<size_t> rank;
 
-  explicit DSU(size_t n) {
-    this->n = n;
-    this->parent.assign(n, 0);
-    this->rank.assign(n, 0);
-
+  explicit DSU(size_t n) : n(n), parent(n, 0), rank(n, 0) {
     for (size_t i = 0; i < n; ++i) {
       this->parent[i] = i;
     }
